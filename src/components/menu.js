@@ -8,13 +8,13 @@ import "../stylesheets/menu.css"
 export const Menu = () => (
   <nav>
     <NavLink to="/" exact activeClassName="activeC">
-      <HomeIcon />
+      Home<HomeIcon />
     </NavLink>
     <NavLink to="/about/" activeClassName="activeC">
-      <MdChildCare />
+      About<MdChildCare />
     </NavLink>
     <NavLink to="/login/" activeClassName="activeC">
-      <MdAccountBox />
+      Login<MdAccountBox />
     </NavLink>
   </nav>
 )
