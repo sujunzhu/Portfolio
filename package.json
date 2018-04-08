@@ -4,7 +4,8 @@
   "description": "a portfolio site for architecture",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/.bin/webpack-dev-server --hot --inline --history-api-fallback --mode development"
+    "start": "./node_modules/.bin/webpack-dev-server --hot --inline --history-api-fallback --mode development --config webpack.dev.js",
+    "build": "webpack --optimize-minimize --mode production --config webpack.prod.js"
   },
   "repository": {
     "type": "git",
