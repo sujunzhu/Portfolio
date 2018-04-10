@@ -1,14 +1,30 @@
 [
   {
-    "text":"Architecture",
-    "img":"/public/images/architecture.jpg",
-    "url":"/public/images/architecture.jpg",
-    "type":"topicItem"
+    "text":"Man",
+    "img":"/public/pdfs/man/1.jpg",
+    "url":"/public/pdfs/man/man.pdf",
+    "type":"topicItem",
+    "caption":""
   },
   {
-    "text":"Architecture",
-    "img":"/public/images/3.jpg",
-    "url":"/public/images/3.jpg",
-    "type":"topicItem"
+    "text":"Man",
+    "img":"/public/pdfs/man/2.jpg",
+    "url":"/public/pdfs/man/man.pdf",
+    "type":"topicItem",
+    "caption":""
+  },
+  {
+    "text":"Man",
+    "img":"/public/pdfs/man/3.jpg",
+    "url":"/public/pdfs/man/man.pdf",
+    "type":"topicItem",
+    "caption":""
+  },
+  {
+    "text":"Man",
+    "img":"/public/pdfs/man/4.jpg",
+    "url":"/public/pdfs/man/man.pdf",
+    "type":"topicItem",
+    "caption":""
   }
 ]

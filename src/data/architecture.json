@@ -1,20 +1,44 @@
 [
   {
     "text":"Architecture",
-    "img":"/public/images/architecture.jpg",
-    "url":"/public/images/architecture.jpg",
-    "type":"topicItem"
+    "img":"/public/pdfs/architecture/1.jpg",
+    "url":"/public/pdfs/architecture/architecture.pdf",
+    "type":"topicItem",
+    "caption":""
   },
   {
     "text":"Architecture",
-    "img":"/public/images/3.jpg",
-    "url":"/public/images/3.jpg",
-    "type":"topicItem"
+    "img":"/public/pdfs/architecture/2.jpg",
+    "url":"/public/pdfs/architecture/architecture.pdf",
+    "type":"topicItem",
+    "caption":""
   },
   {
     "text":"Architecture",
-    "img":"/public/images/3.jpg",
-    "url":"/public/images/2h.jpg",
-    "type":"topicItem"
+    "img":"/public/pdfs/architecture/3.jpg",
+    "url":"/public/pdfs/architecture/architecture.pdf",
+    "type":"topicItem",
+    "caption":""
+  },
+  {
+    "text":"Architecture",
+    "img":"/public/pdfs/architecture/4.jpg",
+    "url":"/public/pdfs/architecture/architecture.pdf",
+    "type":"topicItem",
+    "caption":""
+  },
+  {
+    "text":"Architecture",
+    "img":"/public/pdfs/architecture/5.jpg",
+    "url":"/public/pdfs/architecture/architecture.pdf",
+    "type":"topicItem",
+    "caption":""
+  },
+  {
+    "text":"Architecture",
+    "img":"/public/pdfs/architecture/6.jpg",
+    "url":"/public/pdfs/architecture/architecture.pdf",
+    "type":"topicItem",
+    "caption":""
   }
 ]

@@ -28,6 +28,10 @@
   color:grey;
 }
 
+.menuItemWord:hover{
+  color:red;
+}
+
 .menuIcon{
   font-size: 60px;
   padding-bottom: 5px;

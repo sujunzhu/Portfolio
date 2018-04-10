@@ -1,20 +1,37 @@
 [
   {
-    "text":"Architecture",
-    "img":"/public/images/architecture.jpg",
-    "url":"/public/images/architecture.jpg",
-    "type":"topicItem"
+    "text":"Malacca",
+    "img":"/public/pdfs/malacca/1.jpg",
+    "url":"/public/pdfs/malacca/malacca.pdf",
+    "type":"topicItem",
+    "caption":""
   },
   {
-    "text":"Architecture",
-    "img":"/public/images/3.jpg",
-    "url":"/public/images/3.jpg",
-    "type":"topicItem"
+    "text":"Malacca",
+    "img":"/public/pdfs/malacca/2.jpg",
+    "url":"/public/pdfs/malacca/malacca.pdf",
+    "type":"topicItem",
+    "caption":""
   },
   {
-    "text":"Architecture",
-    "img":"/public/images/3.jpg",
-    "url":"/public/images/3.jpg",
-    "type":"topicItem"
+    "text":"Malacca",
+    "img":"/public/pdfs/malacca/3.jpg",
+    "url":"/public/pdfs/malacca/malacca.pdf",
+    "type":"topicItem",
+    "caption":""
+  },
+  {
+    "text":"Malacca",
+    "img":"/public/pdfs/malacca/4.jpg",
+    "url":"/public/pdfs/malacca/malacca.pdf",
+    "type":"topicItem",
+    "caption":""
+  },
+  {
+    "text":"Malacca",
+    "img":"/public/pdfs/malacca/5.jpg",
+    "url":"/public/pdfs/malacca/malacca.pdf",
+    "type":"topicItem",
+    "caption":""
   }
 ]

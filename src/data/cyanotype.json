@@ -1,20 +1,16 @@
 [
   {
-    "text":"Architecture",
-    "img":"/public/images/architecture.jpg",
-    "url":"/public/images/architecture.jpg",
-    "type":"topicItem"
+    "text":"Cyanotype",
+    "img":"/public/pdfs/cyanotype/1.jpg",
+    "url":"/public/pdfs/cyanotype/cyanotype.pdf",
+    "type":"topicItem",
+    "caption":""
   },
   {
-    "text":"Architecture",
-    "img":"/public/images/3.jpg",
-    "url":"/public/images/3.jpg",
-    "type":"topicItem"
-  },
-  {
-    "text":"Architecture",
-    "img":"/public/images/4.jpg",
-    "url":"/public/images/2h.jpg",
-    "type":"topicItem"
+    "text":"Cyanotype",
+    "img":"/public/pdfs/cyanotype/2.jpg",
+    "url":"/public/pdfs/cyanotype/cyanotype.pdf",
+    "type":"topicItem",
+    "caption":""
   }
 ]

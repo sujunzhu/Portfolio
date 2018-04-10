@@ -36,9 +36,13 @@ body {
 
 .topic{
   text-decoration: none;
-  color: white;
+  color: lightyellow;
   font-family: Impact, Charcoal, sans-serif;
   font-size: 50px;
+}
+
+.topic:hover{
+  color:red;
 }
 
 .topic div{
