@@ -1,18 +1,25 @@
 import React from 'react'
 import "../stylesheets/login.css"
 
-export const Login = ({onNewTopic}) => {
-  const submit = () =>{
+export const Login = ({onNewTopic, removeTopic}) => {
+  const submit1 = () =>{
     onNewTopic({
       text:"Topic1",
-      url:"/public/images/1.jpg",
-      type:"small"
+      img:"/public/images/add.jpg",
+      url:"/public/images/add.jpg",
+      type:"big"
     })
+  }
+  const submit2 = () =>{
+    removeTopic("/public/images/add.jpg")
   }
   return (
   <div className="login">
-    <h1>
-      <button onClick={submit}>add</button>
-    </h1>
+    <div>
+      <button onClick={submit1}>add</button>
+    </div>
+    <div>
+      <button onClick={submit2}>delete</button>
+    </div>
   </div>
 )}

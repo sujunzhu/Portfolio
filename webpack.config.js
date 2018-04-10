@@ -21,6 +21,11 @@ module.exports = {
           presets: ["env", "react"]
         }
       },
+      {
+				test: /\.json$/,
+				exclude: /(node_modules)/,
+				loader: "json-loader"
+			},
 			{
 				test: /\.css$/,
 				loader: 'style-loader!css-loader!postcss-loader'

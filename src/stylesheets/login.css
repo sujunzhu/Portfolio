@@ -1,12 +1,34 @@
 .login {
   width:100vw;
-  height:100vh;
+  height: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
-.login h1{
+.login div{
+  flex-basis: 30%;
   text-align: center;
   flex: 1;
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.login div button{
+  flex:1;
+  font-family: Impact, Charcoal, sans-serif;
+  font-size: 100px;
+  color:grey;
+  border: none;
+  background-color:lightgrey;
+}
+
+.login div button:focus{
+  outline:0;
+  color:white;
+  background-color: black;
+  border: 2px solid black;
+  border-radius: 25px;
 }

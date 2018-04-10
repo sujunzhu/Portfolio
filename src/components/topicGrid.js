@@ -1,16 +1,30 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export const TopicGrid = ({text, url, type}) => {
+export const TopicGrid = ({text, img, url, type, handler}) => {
   const TopicGridCss = {
-    background: `url(${url}) no-repeat center center`,
+    background: `url(${img}) no-repeat center center`,
     backgroundSize: `cover`
   }
   return (
     <div className={type} style={TopicGridCss}>
-      <Link to={url} target="_blank">
-        <div>Click to see large</div>
-      </Link>
+      {
+        type === "big" ?
+        <Link to={url} onClick={() => {
+                                        handler(text)
+                                      }
+                               }
+          className="topic">
+          <div>
+            {text}
+          </div>
+        </Link> :
+        <Link to={url} target="_blank" className="topic">
+          <div>
+            {text}
+          </div>
+        </Link>
+      }
     </div>
   )
 }

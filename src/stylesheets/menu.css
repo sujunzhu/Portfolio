@@ -1,9 +1,50 @@
 #menu{
   display: flex;
-  justify-content: flex-end;
-  background-color: white;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#menuContainer{
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.menuItem{
+  height: 80px;
+  flex-basis:20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-family: Impact, Charcoal, sans-serif;
+  padding-top: 5px;
+}
+
+.menuItemWord{
+  text-decoration: none;
+  font-size: 40px;
+  color:grey;
+}
+
+.menuIcon{
+  font-size: 60px;
+  padding-bottom: 5px;
 }
 
 .activeC{
-  background-color: grey;
+  background-color: black;
+  border: 2px solid black;
+  border-radius: 25px;
+}
+
+.activeC span{
+  color: white;
+}
+
+@media only screen and (max-width: 1080px) {
+  #menuContainer{
+    flex-direction: column;
+  }
 }

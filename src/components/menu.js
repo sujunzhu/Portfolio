@@ -6,15 +6,17 @@ import MdAccountBox from 'react-icons/lib/md/account-box'
 import "../stylesheets/menu.css"
 
 export const Menu = () => (
-  <nav>
-    <NavLink to="/" exact activeClassName="activeC">
-      Home<HomeIcon />
-    </NavLink>
-    <NavLink to="/about/" activeClassName="activeC">
-      About<MdChildCare />
-    </NavLink>
-    <NavLink to="/login/" activeClassName="activeC">
-      Login<MdAccountBox />
-    </NavLink>
-  </nav>
+  <div id="menu">
+    <nav id="menuContainer">
+      <NavLink to="/" exact activeClassName="activeC" className="menuItem">
+        <span className="menuItemWord">Home <HomeIcon className="menuIcon"/></span>
+      </NavLink>
+      <NavLink to="/about/" activeClassName="activeC" className="menuItem">
+        <span className="menuItemWord">X.F.Ye <MdChildCare className="menuIcon"/></span>
+      </NavLink>
+      <NavLink to="/login/" activeClassName="activeC" className="menuItem">
+        <span className="menuItemWord">Play.S <MdAccountBox className="menuIcon"/></span>
+      </NavLink>
+    </nav>
+  </div>
 )

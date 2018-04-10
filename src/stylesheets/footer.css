@@ -1,0 +1,21 @@
+#footer{
+  height: 30px;
+  padding-top: 2px;
+  display: flex;
+  justify-content: center;
+}
+
+.footerItem{
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:grey;
+  font-family: Impact, Charcoal, sans-serif;
+}
+
+@media only screen and (max-width: 1080px) {
+  #footer{
+    flex-direction: column;
+  }
+}

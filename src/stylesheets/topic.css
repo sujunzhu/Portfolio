@@ -1,21 +1,17 @@
-.about {
+#topic{
   width:100vw;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.about div{
-  height: 100%;
+#topic div{
+  width:500px;
+  height:500px;
+  margin-top: 50px;
   flex-basis: 60%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-}
-
-.about div p{
-  text-align: left;
-  font-size: 16px;
-  font-family: "Comic Sans MS", cursive, sans-serif;
-  color:grey;
 }

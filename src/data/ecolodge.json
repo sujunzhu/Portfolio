@@ -1,0 +1,20 @@
+[
+  {
+    "text":"Architecture",
+    "img":"/public/images/architecture.jpg",
+    "url":"/public/images/architecture.jpg",
+    "type":"topicItem"
+  },
+  {
+    "text":"Architecture",
+    "img":"/public/images/3.jpg",
+    "url":"/public/images/3.jpg",
+    "type":"topicItem"
+  },
+  {
+    "text":"Architecture",
+    "img":"/public/images/3.jpg",
+    "url":"/public/images/3.jpg",
+    "type":"topicItem"
+  }
+]
