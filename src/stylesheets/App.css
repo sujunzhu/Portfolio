@@ -1,0 +1,16 @@
+.loader{
+  width:100%;
+  height: 80vh;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#app-container{
+  display: flex;
+  justify-content: center;
+}
+
+#app{
+  flex-basis: 90%;
+}

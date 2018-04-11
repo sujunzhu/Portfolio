@@ -12,6 +12,8 @@ import addTopicImage from '../actions/add_topic_image'
 import getTopicImages from '../actions/get_topic_images'
 import removeTopicImages from '../actions/remove_topic_images'
 import getSpecificTopicImages from '../actions/get_specific_topic'
+import { FadeLoader } from 'react-spinners'
+import "../stylesheets/App.css"
 
 class App extends Component {
   constructor(props) {
@@ -48,7 +50,11 @@ class App extends Component {
       return <TopicGridContainer grids={this.props.topicImageList}
                                  handler={this.getSpecificImageSetup}/>;
     } else {
-      return <div>Loading</div>;
+      return <div className="loader">
+                <FadeLoader color={'grey'}
+                            loading={true}
+                />
+             </div>;
     }
   }
 
@@ -60,7 +66,11 @@ class App extends Component {
     if(this.props.specificTopicImageList){
       return <Topic topicImages={this.props.specificTopicImageList}/>;
     } else {
-      return <div>Loading</div>;
+      return <div className="loader">
+                <FadeLoader color={'grey'}
+                            loading={true}
+                />
+             </div>;
     }
   }
 
@@ -69,16 +79,18 @@ class App extends Component {
     return (
       <div>
         <Menu />
-        <div>
-          {(pathname === "/") ?
-            this.renderTopicImages() :
-            (pathname === "/about/") ?
-            <About /> :
-            (pathname === "/login/") ?
-            <Login onNewTopic={this.addTopicGrid}
-                   removeTopic={this.removeTopicGrid}/> :
-            this.renderSpecificTopicImages()
-          }
+        <div id="app-container">
+          <div id="app">
+            {(pathname === "/") ?
+              this.renderTopicImages() :
+              (pathname === "/about/") ?
+              <About /> :
+              (pathname === "/login/") ?
+              <Login onNewTopic={this.addTopicGrid}
+                     removeTopic={this.removeTopicGrid}/> :
+              this.renderSpecificTopicImages()
+            }
+          </div>
         </div>
         <Footer />
       </div>
