@@ -1,0 +1,17 @@
+#landing {
+  color: blue;
+  display: flex;
+  justify-content: center;
+}
+
+#sign_up {
+  color: blue;
+  display: flex;
+  justify-content: center;
+}
+
+#sign_in {
+  color: blue;
+  display: flex;
+  justify-content: center;
+}

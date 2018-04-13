@@ -12,9 +12,9 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: "babel-loader",
+        loader: 'babel-loader',
         query: {
-          presets: ["env", "react"]
+          presets: ['env', 'react','stage-2'],
         }
       },
 			{

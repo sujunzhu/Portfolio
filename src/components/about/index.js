@@ -1,5 +1,5 @@
 import React from 'react'
-import "../stylesheets/about.css"
+import "../../stylesheets/about.css"
 
 export const About = () => (
   <div className="about">
