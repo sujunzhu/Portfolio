@@ -10,10 +10,10 @@ export const TopicGrid = ({text, img, url, type, handler}) => {
     <div className={type} style={TopicGridCss}>
       {
         type === "big" ?
-        <Link to={url} onClick={() => {
+        <Link to={url} /*onClick={() => {
                                         handler(text)
                                       }
-                               }
+                               }*/
           className="topic">
           <div>
             {text}

@@ -1,17 +1,23 @@
-#landing {
-  color: blue;
-  display: flex;
-  justify-content: center;
+#profile {
+
 }
 
 #sign_up {
-  color: blue;
-  display: flex;
-  justify-content: center;
+
 }
 
 #sign_in {
-  color: blue;
+
+}
+
+#password_forget{
+
+}
+
+.hack {
   display: flex;
   justify-content: center;
+  align-items: center;
+  color: grey;
+  font-family: "Comic Sans MS", cursive, sans-serif;
 }

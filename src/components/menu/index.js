@@ -10,7 +10,7 @@ import SignOutButton from '../sign_out'
 import { auth } from '../../firebase';
 import { connect } from 'react-redux';
 
-const Menu = ({ authUser }) => (
+const Menu = ({ authUser, location }) => (
   <div>
     { authUser
       ? <LogoutMenu />
@@ -23,16 +23,13 @@ const LoginMenu = () => (
   <div>
     <div id="menu">
       <nav id="menuContainer">
-        <NavLink to={Routes.HOME} exact activeClassName="activeC" className="menuItem">
+        <NavLink to={Routes.HOME} exact className="menuItem">
           <span className="menuItemWord">Home <HomeIcon className="menuIcon"/></span>
         </NavLink>
-        <NavLink to={Routes.ABOUT} activeClassName="activeC" className="menuItem">
+        <NavLink to={Routes.ABOUT} className="menuItem">
           <span className="menuItemWord">X.F.Ye <MdChildCare className="menuIcon"/></span>
         </NavLink>
-        <NavLink to={Routes.PLAYSTATION} activeClassName="activeC" className="menuItem">
-          <span className="menuItemWord">Play.S <MdAccountBox className="menuIcon"/></span>
-        </NavLink>
-        <NavLink to={Routes.SIGN_IN} activeClassName="activeC" className="menuItem">
+        <NavLink to={Routes.SIGN_IN} className="menuItem">
           <span className="menuItemWord">Sign.I <MdAccountCircle className="menuIcon"/></span>
         </NavLink>
       </nav>
@@ -44,17 +41,17 @@ const LogoutMenu = () => (
   <div>
     <div id="menu">
       <nav id="menuContainer">
-        <NavLink to={Routes.HOME} exact activeClassName="activeC" className="menuItem">
+        <NavLink to={Routes.HOME} exact className="menuItem">
           <span className="menuItemWord">Home <HomeIcon className="menuIcon"/></span>
         </NavLink>
-        <NavLink to={Routes.ABOUT} activeClassName="activeC" className="menuItem">
+        <NavLink to={Routes.ABOUT} className="menuItem">
           <span className="menuItemWord">X.F.Ye <MdChildCare className="menuIcon"/></span>
         </NavLink>
-        <NavLink to={Routes.PLAYSTATION} activeClassName="activeC" className="menuItem">
+        <NavLink to={Routes.PLAYSTATION} className="menuItem">
           <span className="menuItemWord">Play.S <MdAccountBox className="menuIcon"/></span>
         </NavLink>
-        <NavLink to={Routes.HOME} onClick={auth.doSignOut} className="menuItem">
-          <span className="menuItemWord">Sign.O <MdAccountCircle className="menuIcon"/></span>
+        <NavLink to={Routes.PROFILE} className="menuItem">
+          <span className="menuItemWord">Info.U <MdAccountCircle className="menuIcon"/></span>
         </NavLink>
       </nav>
     </div>

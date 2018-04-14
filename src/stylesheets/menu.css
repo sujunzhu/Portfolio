@@ -42,13 +42,23 @@
   padding-bottom: 5px;
 }
 
-.activeC{
+.activeC1{
   background-color: black;
   border: 2px solid black;
   border-radius: 25px;
 }
 
-.activeC span{
+.activeC1 span{
+  color: white;
+}
+
+.activeC2{
+  background-color: black;
+  border: 2px solid black;
+  border-radius: 25px;
+}
+
+.activeC2 span{
   color: white;
 }
 

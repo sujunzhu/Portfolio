@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
-import { SignUpLink } from '../sign_up';
-import { PasswordForgetLink } from '../password_forget';
+import { Link } from 'react-router-dom';
 import { auth } from '../../firebase';
 import * as routes from '../../constants/routes';
 
-const SignInPage = ({ history }) =>
-  <div id="sign_up" className="hack">
+const PasswordForgetPage = () =>
+  <div id="password_forget" className="hack">
     <div>
-      <h1>SignIn</h1>
-      <SignInForm history={history} />
-      <PasswordForgetLink />
-      <SignUpLink />
+      <h1>PasswordForget</h1>
+      <PasswordForgetForm />
     </div>
   </div>
 
@@ -21,11 +17,10 @@ const byPropKey = (propertyName, value) => () => ({
 
 const INITIAL_STATE = {
   email: '',
-  password: '',
   error: null,
 };
 
-class SignInForm extends Component {
+class PasswordForgetForm extends Component {
   constructor(props) {
     super(props);
 
@@ -33,19 +28,11 @@ class SignInForm extends Component {
   }
 
   onSubmit = (event) => {
-    const {
-      email,
-      password,
-    } = this.state;
+    const { email } = this.state;
 
-    const {
-      history,
-    } = this.props;
-
-    auth.doSignInWithEmailAndPassword(email, password)
-      .then(authUser => {
+    auth.doPasswordReset(email)
+      .then(() => {
         this.setState(() => ({ ...INITIAL_STATE }));
-        history.push(routes.HOME);
       })
       .catch(error => {
         this.setState(byPropKey('error', error));
@@ -57,32 +44,22 @@ class SignInForm extends Component {
   render() {
     const {
       email,
-      password,
       error,
     } = this.state;
 
-    const isInvalid =
-      password === '' ||
-      email === '';
+    const isInvalid = email === '';
 
     return (
       <form onSubmit={this.onSubmit}>
         <input
-          value={email}
+          value={this.state.email}
           onChange={event => this.setState(byPropKey('email', event.target.value))}
           type="text"
           placeholder="Email Address"
           autoComplete="email"
         />
-        <input
-          value={password}
-          onChange={event => this.setState(byPropKey('password', event.target.value))}
-          type="password"
-          placeholder="Password"
-          autoComplete="current-password"
-        />
         <button disabled={isInvalid} type="submit">
-          Sign In
+          Reset My Password
         </button>
 
         { error && <p>{error.message}</p> }
@@ -91,8 +68,14 @@ class SignInForm extends Component {
   }
 }
 
-export default withRouter(SignInPage);
+const PasswordForgetLink = () =>
+  <p>
+    <Link to={routes.PW_FORGET}>Forgot Password?</Link>
+  </p>
+
+export default PasswordForgetPage;
 
 export {
-  SignInForm,
+  PasswordForgetForm,
+  PasswordForgetLink,
 };

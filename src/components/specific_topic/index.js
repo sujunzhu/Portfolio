@@ -2,13 +2,20 @@ import React from 'react'
 import { SpecificTopicImage } from '../specific_topic_image'
 import { FadeLoader } from 'react-spinners'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import getSpecificTopicImages from '../../actions/get_specific_topic'
 import "../../stylesheets/topic.css"
 
 class SpecificTopicPage extends React.Component {
+  componentWillMount(){
+    this.props.getSpecificTopicImages(this.props.match.params.name);
+  }
+
   render() {
-    const { specificTopicImageList } = this.props;
+    const { specificTopicImageList,
+            specificTopicImageListFetching } = this.props;
     return (
-      specificTopicImageList
+      !specificTopicImageListFetching
       ? <div id="topic">
           {
             specificTopicImageList.map((topicImage, i) => {
@@ -32,8 +39,16 @@ class SpecificTopicPage extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  specificTopicImageList: state.specificTopicImageList,
-});
+const mapStateToProps = (state) => {
+  return ({
+  specificTopicImageList: state.specificTopicImageList.data,
+  specificTopicImageListFetching: state.specificTopicImageList.isFetching,
+})};
 
-export default connect(mapStateToProps, null)(SpecificTopicPage);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+    getSpecificTopicImages: getSpecificTopicImages,
+  }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SpecificTopicPage);

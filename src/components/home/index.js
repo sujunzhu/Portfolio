@@ -5,28 +5,22 @@ import { FadeLoader } from 'react-spinners'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import getTopicImages from '../../actions/get_topic_images'
-import getSpecificTopicImages from '../../actions/get_specific_topic'
+//import getSpecificTopicImages from '../../actions/get_specific_topic'
 import "../../stylesheets/topic_grid.css"
 
 class HomePage extends Component {
   constructor(props){
     super(props)
-    this.getSpecificImageSetup = this.getSpecificImageSetup.bind(this)
   }
 
   componentDidMount() {
     this.props.getTopicImages();
-    this.props.getSpecificTopicImages("default");
-  }
-
-  getSpecificImageSetup(topic) {
-    this.props.getSpecificTopicImages(topic);
   }
 
   render() {
-    const { topicImageList }  = this.props;
+    const { topicImageList, topicImageListFetching }  = this.props;
     return (
-      topicImageList
+      !topicImageListFetching
       ? <div id="topicGridContainer">
           {topicImageList.map((topicImage, i) =>
             <TopicGrid key={i}
@@ -34,7 +28,7 @@ class HomePage extends Component {
                        img={topicImage.img}
                        url={topicImage.url}
                        type={topicImage.type}
-                       handler={this.getSpecificImageSetup}/>
+                       /*handler={this.props.getSpecificTopicImages}*//>
             )}
         </div>
       : <div className="loader">
@@ -48,13 +42,14 @@ class HomePage extends Component {
 
 const mapStateToProps = (state) => {
   return ({
-  topicImageList: state.topicImageList,
+  topicImageList: state.topicImageList.data,
+  topicImageListFetching: state.topicImageList.isFetching
 })};
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     getTopicImages: getTopicImages,
-    getSpecificTopicImages: getSpecificTopicImages,
+    //getSpecificTopicImages: getSpecificTopicImages,
   }, dispatch);
 }
 
