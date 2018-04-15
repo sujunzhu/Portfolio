@@ -8,61 +8,78 @@ import "../../stylesheets/play_station.css"
 import withAuthorization from '../withAuthorization';
 import { db } from '../../firebase';
 import PSAboutContent from './play_station_aboutContent'
+import PSTopic from './play_station_topic'
+import PSTopicSpecific from './play_station_topicSpecific'
+
+const INITIAL_STATE = {
+  about:true,
+  topic:false,
+  topic_specific:false,
+}
+
+const updateByPropertyName = (propertyName, value) => () => ({
+  [propertyName]: value,
+});
 
 class PlayStationPage extends Component{
   constructor(props) {
     super(props);
-
     this.state = {
-      //users: null,
-    };
+      ...INITIAL_STATE
+    }
   }
 
   componentDidMount() {
-    db.onceGetUsers().then(snapshot =>
-      this.setState(() => ({ users: snapshot.val() }))
-    );
+
   }
 
   render() {
-    const submit1 = () =>{
-      this.props.addTopicImage({
-        text:"Topic1",
-        img:"/public/images/add.jpg",
-        url:"/public/images/add.jpg",
-        type:"big"
-      })
-    }
-
-    const submit2 = () =>{
-      this.props.removeTopicImages("/public/images/add.jpg")
-    }
-    /*<div>
-      <button onClick={submit1}>add</button>
-    </div>
-    <div>
-      <button onClick={submit2}>delete</button>
-    </div>
-    <div>
-      { !!users && <UserList users={users} /> }
-    </div>*/
+    const { about, topic, topic_specific } = this.state;
+    const aboutSwitch = () => {
+             this.setState(updateByPropertyName('about',true));
+             this.setState(updateByPropertyName('topic',false));
+             this.setState(updateByPropertyName('topic_specific',false));
+            }
+    const topicSwitch = () => {
+              this.setState(updateByPropertyName('about',false));
+              this.setState(updateByPropertyName('topic',true));
+              this.setState(updateByPropertyName('topic_specific',false));
+            }
+    const topicSpecificSwitch = () => {
+              this.setState(updateByPropertyName('about',false));
+              this.setState(updateByPropertyName('topic',false));
+              this.setState(updateByPropertyName('topic_specific',true));
+            }
     return (
-      <div className="play_station">
-        <PSAboutContent />
+      <div id="play_station_container">
+        <div id="play_station_menu">
+          <button onClick={ aboutSwitch }>
+            Update your introduction!
+          </button>
+          <button onClick={ topicSwitch }>
+            Update your topic!
+          </button>
+          <button onClick={ topicSpecificSwitch }>
+            Update your topic_specific!
+          </button>
+        </div>
+        <div id="play_station">
+          {
+            about
+            ? <PSAboutContent />
+            : topic
+              ? <PSTopic />
+              : topic_specific
+                ? <PSTopicSpecific />
+                : <div>
+                    Something is wrong!
+                  </div>
+          }
+        </div>
       </div>
     )
   }
 }
-
-const UserList = ({ users }) =>
-  <div>
-    <h2>List of Usernames of Users</h2>
-    <p>(Saved on Sign Up in Firebase Database)</p>
-
-    {Object.keys(users).map(key =>
-      <p key={key}>{users[key].username}</p>
-    )}
-  </div>
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({

@@ -3,7 +3,7 @@ import { SpecificTopicImage } from '../specific_topic_image'
 import { FadeLoader } from 'react-spinners'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import getSpecificTopicImages from '../../actions/get_specific_topic'
+import { getSpecificTopicImages } from '../../actions/get_specific_topic'
 import "../../stylesheets/topic.css"
 
 class SpecificTopicPage extends React.Component {

@@ -281,95 +281,34 @@
     "type" : "big",
     "url" : "topic/architecture"
   }, {
-    "img" : "/public/images/3.jpg",
-    "text" : "",
-    "type" : "small",
-    "url" : "/public/images/3.jpg"
-  }, {
-    "img" : "/public/images/2h.jpg",
-    "text" : "",
-    "type" : "horizontal",
-    "url" : "/public/images/2h.jpg"
-  }, {
     "img" : "/public/images/city.jpg",
     "text" : "City",
     "type" : "big",
     "url" : "topic/city"
-  }, {
-    "img" : "/public/images/3.jpg",
-    "text" : "",
-    "type" : "small",
-    "url" : "/public/images/3.jpg"
-  }, {
-    "img" : "/public/images/1v.jpg",
-    "text" : "",
-    "type" : "vertical",
-    "url" : "/public/images/1v.jpg"
   }, {
     "img" : "/public/images/cyanotype.jpg",
     "text" : "Cyanotype",
     "type" : "big",
     "url" : "topic/cyanotype"
   }, {
-    "img" : "/public/images/3.jpg",
-    "text" : "",
-    "type" : "small",
-    "url" : "/public/images/3.jpg"
-  }, {
-    "img" : "/public/images/1v.jpg",
-    "text" : "",
-    "type" : "vertical",
-    "url" : "/public/images/1v.jpg"
-  }, {
     "img" : "/public/images/ecolodge.jpg",
     "text" : "Ecolodge",
     "type" : "big",
     "url" : "topic/ecolodge"
-  }, {
-    "img" : "/public/images/4.jpg",
-    "text" : "",
-    "type" : "small",
-    "url" : "/public/images/4.jpg"
-  }, {
-    "img" : "/public/images/1v.jpg",
-    "text" : "",
-    "type" : "vertical",
-    "url" : "/public/images/1v.jpg"
   }, {
     "img" : "/public/images/malacca.jpg",
     "text" : "Malacca",
     "type" : "big",
     "url" : "topic/malacca"
   }, {
-    "img" : "/public/images/5.jpg",
-    "text" : "",
-    "type" : "small",
-    "url" : "/public/images/5.jpg"
-  }, {
-    "img" : "/public/images/2h.jpg",
-    "text" : "",
-    "type" : "horizontal",
-    "url" : "/public/images/2h.jpg"
-  }, {
     "img" : "/public/images/man.jpg",
     "text" : "Man",
     "type" : "big",
     "url" : "topic/man"
   }, {
-    "img" : "/public/images/4.jpg",
-    "text" : "",
-    "type" : "small",
-    "url" : "/public/images/4.jpg"
-  }, {
-    "img" : "/public/images/1v.jpg",
-    "text" : "",
-    "type" : "vertical",
-    "url" : "/public/images/1v.jpg"
-  }, {
     "img" : "/public/images/tropical_roof.jpg",
     "text" : "Tropical Roof",
     "type" : "big",
     "url" : "topic/tropical_roof"
-  } ],
-  "topics" : [ "architecture", "city", "cyanotype", "ecolodge", "malacca", "man", "tropical_roof" ]
+  } ]
 }

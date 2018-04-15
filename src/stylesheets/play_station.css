@@ -1,4 +1,12 @@
-.play_station {
+#play_station_container {
+  width:100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#play_station {
   width:100vw;
   display: flex;
   justify-content: center;
@@ -27,9 +35,46 @@
   color:grey;
 }
 
+#play_station_topic{
+  flex: auto;
+  width: 60%;
+  text-align: center;
+}
 
+#topicEditForm textarea {
+  width: 100%;
+  height: 100px;
+  text-align: left;
+  font-size: 16px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color:grey;
+}
 
+#play_station_topic_specific{
+  flex: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.play_station_not_topic{
+  flex-basis: 60%;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+
+.play_station_not_topic textarea {
+  width: 60vw;
+  height: 100px;
+  text-align: left;
+  font-size: 16px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color:grey;
+}
 
 
 

@@ -8,7 +8,7 @@ import man from '../data/man.json'
 import tropical_roof from '../data/tropical_roof.json'*/
 import { db } from '../firebase';
 
-export default function getSpecificTopicImages(topic) {
+function getSpecificTopicImages(topic) {
   return dispatch => {
     dispatch(startGetSpecificTopicImagesAsync());
     db.onceGetSpecificTopicImageList(topic.toLowerCase().replace(/ /gi,"_"))
@@ -17,6 +17,21 @@ export default function getSpecificTopicImages(topic) {
         dispatch(getSpecificTopicImagesAsync(specificTopicList));
       })
       .catch(error => console.log("getSpecificTopicImages:"+error));
+  }
+}
+
+function updateSpecificTopicImages(topic,sTopicList) {
+  return dispatch => {
+    dispatch(startGetSpecificTopicImagesAsync());
+    let obj = {};
+    obj[topic] = sTopicList;
+    db.doUpdateSpecificTopicList(obj).then(
+      ()=>{
+        db.onceGetSpecificTopicImageList(topic.toLowerCase().replace(/ /gi,"_")).then(snapshot => {
+          let specificTopicList = Object.values(snapshot.val());
+          dispatch(getSpecificTopicImagesAsync(specificTopicList));
+        }).catch(error => console.log("update_getSpecificTopicImages:"+error));
+      }).catch(error => console.log("updateSpecificTopicImages:"+error));
   }
 }
 
@@ -31,4 +46,9 @@ function getSpecificTopicImagesAsync(specificTopicList){
     type: GET_SPECIFIC_TOPIC,
     payload: specificTopicList
   }
+}
+
+export {
+  getSpecificTopicImages,
+  updateSpecificTopicImages,
 }

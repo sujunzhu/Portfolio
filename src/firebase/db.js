@@ -7,6 +7,14 @@ export const doUpdateAboutContent = (about) =>
     aboutContent:about,
   });
 
+export const doUpdateTopicList = (topicList) =>
+  db.ref().update({
+    topicImageList:topicList,
+  });
+
+export const doUpdateSpecificTopicList = (obj) => 
+  db.ref("specificTopicList").update(obj);
+
 export const onceGetUsers = () =>
   db.ref('users').once('value');
 

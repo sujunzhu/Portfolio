@@ -4,7 +4,7 @@ import { TopicGrid } from '../topic_grid'
 import { FadeLoader } from 'react-spinners'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import getTopicImages from '../../actions/get_topic_images'
+import { getTopicImages } from '../../actions/get_topic_images'
 //import getSpecificTopicImages from '../../actions/get_specific_topic'
 import "../../stylesheets/topic_grid.css"
 
@@ -42,8 +42,8 @@ class HomePage extends Component {
 
 const mapStateToProps = (state) => {
   return ({
-  topicImageList: state.topicImageList.data,
-  topicImageListFetching: state.topicImageList.isFetching
+    topicImageList: state.topicImageList.data,
+    topicImageListFetching: state.topicImageList.isFetching,
 })};
 
 function mapDispatchToProps(dispatch) {
