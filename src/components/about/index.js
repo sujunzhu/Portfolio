@@ -3,7 +3,7 @@ import "../../stylesheets/about.css"
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { FadeLoader } from 'react-spinners'
-import getAboutContent from '../../actions/get_about_content'
+import { getAboutContent } from '../../actions/get_about_content'
 
 class AboutPage extends Component {
   componentWillMount(){
@@ -18,9 +18,8 @@ class AboutPage extends Component {
           {
             !aboutContentFetching
             ?
-              <p>
-                {aboutContent}
-              </p>
+              <div dangerouslySetInnerHTML={{__html: aboutContent}}>
+              </div>
             :
               <div className="loader">
                 <FadeLoader color={'grey'}

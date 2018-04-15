@@ -7,13 +7,14 @@ import removeTopicImages from '../../actions/remove_topic_images'
 import "../../stylesheets/play_station.css"
 import withAuthorization from '../withAuthorization';
 import { db } from '../../firebase';
+import PSAboutContent from './play_station_aboutContent'
 
 class PlayStationPage extends Component{
   constructor(props) {
     super(props);
 
     this.state = {
-      users: null,
+      //users: null,
     };
   }
 
@@ -36,20 +37,18 @@ class PlayStationPage extends Component{
     const submit2 = () =>{
       this.props.removeTopicImages("/public/images/add.jpg")
     }
-
-    const { users } = this.state;
-
+    /*<div>
+      <button onClick={submit1}>add</button>
+    </div>
+    <div>
+      <button onClick={submit2}>delete</button>
+    </div>
+    <div>
+      { !!users && <UserList users={users} /> }
+    </div>*/
     return (
       <div className="play_station">
-        <div>
-          <button onClick={submit1}>add</button>
-        </div>
-        <div>
-          <button onClick={submit2}>delete</button>
-        </div>
-        <div>
-          { !!users && <UserList users={users} /> }
-        </div>
+        <PSAboutContent />
       </div>
     )
   }
