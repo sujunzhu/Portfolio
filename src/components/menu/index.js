@@ -4,7 +4,7 @@ import HomeIcon from 'react-icons/lib/fa/home'
 import MdChildCare from 'react-icons/lib/md/child-care'
 import MdAccountBox from 'react-icons/lib/md/account-box'
 import MdAccountCircle from 'react-icons/lib/md/account-circle'
-import "../../stylesheets/menu.css"
+import "../../stylesheets/menu.scss"
 import * as Routes from '../../constants/routes'
 import SignOutButton from '../sign_out'
 import { auth } from '../../firebase';

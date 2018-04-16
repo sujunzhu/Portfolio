@@ -1,13 +1,6 @@
 import { START_GET_ABOUT_CONTENT,
          GET_ABOUT_CONTENT
        } from './types'
-/*import architecture from '../data/architecture.json'
-import city from '../data/city.json'
-import cyanotype from '../data/cyanotype.json'
-import ecolodge from '../data/ecolodge.json'
-import malacca from '../data/malacca.json'
-import man from '../data/man.json'
-import tropical_roof from '../data/tropical_roof.json'*/
 import { db } from '../firebase';
 
 function getAboutContent() {
@@ -18,7 +11,9 @@ function getAboutContent() {
         let aboutContent = Object.values(snapshot.val());
         dispatch(getAboutContentAsync(aboutContent));
       })
-      .catch(error => console.log("getAboutContent:"+error));
+      .catch(error => {
+        console.log("getAboutContent:"+error);
+      });
   }
 }
 

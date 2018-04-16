@@ -4,7 +4,7 @@ import { compose } from 'recompose';
 import { bindActionCreators } from 'redux'
 import addTopicImage from '../../actions/add_topic_image'
 import removeTopicImages from '../../actions/remove_topic_images'
-import "../../stylesheets/play_station.css"
+import "../../stylesheets/play_station.scss"
 import withAuthorization from '../withAuthorization';
 import { db } from '../../firebase';
 import PSAboutContent from './play_station_aboutContent'
@@ -53,15 +53,21 @@ class PlayStationPage extends Component{
     return (
       <div id="play_station_container">
         <div id="play_station_menu">
-          <button onClick={ aboutSwitch }>
-            Update your introduction!
-          </button>
-          <button onClick={ topicSwitch }>
-            Update your topic!
-          </button>
-          <button onClick={ topicSpecificSwitch }>
-            Update your topic_specific!
-          </button>
+          <div>
+            <button onClick={ aboutSwitch }>
+              Update your introduction!
+            </button>
+          </div>
+          <div>
+            <button onClick={ topicSwitch }>
+              Update your topic!
+            </button>
+          </div>
+          <div>
+            <button onClick={ topicSpecificSwitch }>
+              Update your topic_specific!
+            </button>
+          </div>
         </div>
         <div id="play_station">
           {

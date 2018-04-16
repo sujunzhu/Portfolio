@@ -12,8 +12,8 @@ import PasswordForgetPage from "../password_forget"
 import { Whoops404 } from "../404"
 import { withRouter } from 'react-router-dom'
 import * as Routes from '../../constants/routes'
-import "../../stylesheets/App.css"
-import "../../stylesheets/hack.css"
+import "../../stylesheets/App.scss"
+import "../../stylesheets/hack.scss"
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import withAuthentication from '../withAuthentication';
 

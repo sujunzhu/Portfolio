@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { getTopicImages } from '../../actions/get_topic_images'
 //import getSpecificTopicImages from '../../actions/get_specific_topic'
-import "../../stylesheets/topic_grid.css"
+import "../../stylesheets/topic_grid.scss"
 
 class HomePage extends Component {
   constructor(props){

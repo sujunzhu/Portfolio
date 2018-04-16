@@ -4,7 +4,7 @@ import { FadeLoader } from 'react-spinners'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { getSpecificTopicImages } from '../../actions/get_specific_topic'
-import "../../stylesheets/topic.css"
+import "../../stylesheets/topic.scss"
 
 class SpecificTopicPage extends React.Component {
   componentWillMount(){

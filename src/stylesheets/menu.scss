@@ -1,3 +1,5 @@
+@import "../constants/constants.scss";
+
 #login_status{
   display: flex;
   justify-content: center;
@@ -10,35 +12,36 @@
 }
 
 #menuContainer{
+  margin-top: 10px;
   width: 80%;
   display: flex;
   justify-content: center;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .menuItem{
-  height: 80px;
+  height: $menuIcon-size + 10px;
   flex-basis:20%;
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  font-family: Impact, Charcoal, sans-serif;
+  font-family: $big-font-family;
   padding-top: 5px;
 }
 
 .menuItemWord{
   text-decoration: none;
-  font-size: 40px;
-  color:grey;
+  font-size: $menuWord-size;
+  color:$link-color;
 }
 
 .menuItemWord:hover{
-  color:red;
+  color:$link-hover-color;
 }
 
 .menuIcon{
-  font-size: 60px;
+  font-size: $menuIcon-size;
   padding-bottom: 5px;
 }
 
@@ -62,7 +65,7 @@
   color: white;
 }
 
-@media only screen and (max-width: 1080px) {
+@media only screen and (max-width: 800px) {
   #menuContainer{
     flex-direction: column;
   }

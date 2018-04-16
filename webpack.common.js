@@ -24,6 +24,16 @@ module.exports = {
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         loader: "url-loader?name=src/images/[name].[ext]"
+      },
+      {
+        test: /\.scss$/,
+        use: [{
+            loader: "style-loader" // creates style nodes from JS strings
+        }, {
+            loader: "css-loader" // translates CSS into CommonJS
+        }, {
+            loader: "sass-loader" // compiles Sass to CSS
+        }]
       }
     ]
   }

@@ -1,9 +1,12 @@
+@import "../constants/constants.scss";
+
 #topic {
   width:100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 30px;
 }
 
 #topic div {
@@ -21,5 +24,11 @@
 @media only screen and (max-width: 1080px) {
   .specifixImage {
     width: 512px;
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  .specifixImage {
+    width: 256px;
   }
 }

@@ -1,5 +1,6 @@
 import { START_GET_TOPIC_IMAGES, GET_TOPIC_IMAGES } from './types'
 import { db } from '../firebase';
+import topicImageList from '../data/topicImageList.json'
 
 function getTopicImages() {
   return dispatch => {
@@ -8,7 +9,12 @@ function getTopicImages() {
         let topicListState = Object.values(snapshot.val());
         dispatch(getTopicImagesAsync(topicListState))
       }
-    ).catch(error => console.log("getTopicImages:"+error));
+    ).catch(error => {
+      console.log("getTopicImages:"+error);
+      console.log("loading old data...");
+      const topicListState = topicImageList;
+      dispatch(getTopicImagesAsync(topicListState));
+    });
   }
 }
 

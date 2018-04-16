@@ -16,6 +16,7 @@ class ProfilePage extends Component{
             <div>
               <h1>Account: {authUser.email} </h1>
               <SignOutButton />
+              <br/><br/>
             </div>
           :
             <div>

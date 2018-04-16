@@ -1,21 +1,25 @@
+@import "../constants/constants.scss";
+
 #footer{
-  height: 30px;
+  height: $footer-font-size + 15px;
   padding-top: 2px;
   display: flex;
   justify-content: center;
 }
 
 .footerItem{
-  height: 30px;
+  height: $footer-font-size + 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color:grey;
-  font-family: Impact, Charcoal, sans-serif;
+  color:$text-color;
+  font-family: $big-font-family;
+  font-size: $footer-font-size;
 }
 
 @media only screen and (max-width: 1080px) {
   #footer{
+    height: 3 * $footer-font-size + 30px;
     flex-direction: column;
   }
 }
