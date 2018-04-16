@@ -6,9 +6,11 @@ import { db } from '../firebase';
 function getAboutContent() {
   return dispatch => {
     dispatch(startGetAboutContentAsync());
+    let aboutContent = "This is default value";
+    dispatch(getAboutContentAsync(aboutContent));
     db.onceGetAboutContent()
       .then(snapshot => {
-        let aboutContent = Object.values(snapshot.val());
+        aboutContent = Object.values(snapshot.val());
         dispatch(getAboutContentAsync(aboutContent));
       })
       .catch(error => {

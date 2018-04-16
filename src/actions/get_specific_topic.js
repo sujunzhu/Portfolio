@@ -11,33 +11,34 @@ import { db } from '../firebase';
 function getSpecificTopicImages(topic) {
   return dispatch => {
     dispatch(startGetSpecificTopicImagesAsync());
-    db.onceGetSpecificTopicImageList(topic.toLowerCase().replace(/ /gi,"_"))
+    console.log("loading old data...");
+    let specificTopicList;
+    topic = topic.toLowerCase().replace(/ /gi,"_")
+    if(topic === "architecture"){
+      specificTopicList = architecture;
+    }if(topic === "city"){
+      specificTopicList = city;
+    }else if(topic === "cyanotype"){
+      specificTopicList = cyanotype;
+    }else if(topic === "ecolodge"){
+      specificTopicList = ecolodge;
+    }else if(topic === "malacca"){
+      specificTopicList = malacca;
+    }else if(topic === "man"){
+      specificTopicList = man;
+    }else if(topic === "tropical Roof"){
+      specificTopicList = tropical_roof;
+    }else{
+      specificTopicList = architecture;
+    }
+    dispatch(getSpecificTopicImagesAsync(specificTopicList));
+    db.onceGetSpecificTopicImageList(topic)
       .then(snapshot => {
         let specificTopicList = Object.values(snapshot.val());
         dispatch(getSpecificTopicImagesAsync(specificTopicList));
       })
       .catch(error => {
         console.log("getSpecificTopicImages:"+error);
-        console.log("loading old data...");
-        let specificTopicList;
-        if(topic === "Architecture"){
-          specificTopicList = city;
-        }if(topic === "City"){
-          specificTopicList = city;
-        }else if(topic === "Cyanotype"){
-          specificTopicList = cyanotype;
-        }else if(topic === "Ecolodge"){
-          specificTopicList = ecolodge;
-        }else if(topic === "Malacca"){
-          specificTopicList = malacca;
-        }else if(topic === "Man"){
-          specificTopicList = man;
-        }else if(topic === "Tropical Roof"){
-          specificTopicList = tropical_roof;
-        }else{
-          specificTopicList = architecture;
-        }
-        dispatch(getSpecificTopicImagesAsync(specificTopicList));
       });
   }
 }

@@ -5,15 +5,14 @@ import topicImageList from '../data/topicImageList.json'
 function getTopicImages() {
   return dispatch => {
     dispatch(startTopicImagesAsync());
+    let topicListState = topicImageList;
+    dispatch(getTopicImagesAsync(topicListState));
     db.onceGetTopicImageList().then(snapshot => {
-        let topicListState = Object.values(snapshot.val());
+        topicListState = Object.values(snapshot.val());
         dispatch(getTopicImagesAsync(topicListState))
       }
     ).catch(error => {
       console.log("getTopicImages:"+error);
-      console.log("loading old data...");
-      const topicListState = topicImageList;
-      dispatch(getTopicImagesAsync(topicListState));
     });
   }
 }
